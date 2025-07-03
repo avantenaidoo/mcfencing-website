@@ -1,5 +1,3 @@
-// components/FenceReasons.tsx
-
 export default function FenceReasons() {
   const reasons = [
     {
