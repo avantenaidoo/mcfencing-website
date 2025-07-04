@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 import Image from "next/image";
 import type { FC } from "react";
 
