@@ -7,7 +7,7 @@ A modern, mobile-friendly website for MC Fencing — built with **Next.js** and 
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- Deployed with **Vercel** (or specify your platform)
+- Pending: To be deployed
 
 ## 📂 Features
 
