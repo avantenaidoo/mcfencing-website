@@ -19,14 +19,13 @@ A modern, mobile-friendly website for MC Fencing — built with **Next.js** and 
 
 ## 📁 Project Structure
 
-/
-├── components/ # Reusable UI components (e.g. Navbar, ContactForm)
-├── pages/ # Page routes (e.g. index.tsx, contact.tsx)
-├── public/ # Static assets (images, icons, etc.)
-├── styles/ # Tailwind and global styles
-├── tsconfig.json # TypeScript config
-└── README.md # This file
-
+.
+├── components/        # Reusable UI components (e.g. Navbar, ContactForm)
+├── pages/             # Page routes (e.g. index.tsx, contact.tsx)
+├── public/            # Static assets (images, icons, etc.)
+├── styles/            # Tailwind and global styles
+├── tsconfig.json      # TypeScript config
+└── README.md          # This file
 
 ## 💡 Getting Started
 
