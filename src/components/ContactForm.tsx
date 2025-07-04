@@ -21,7 +21,6 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, replace with your actual email service
     alert("Form submitted! This should send to mcfencing22@gmail.com");
     console.log(formData);
   };
@@ -59,7 +58,7 @@ export default function ContactForm() {
           value={formData.projectType}
           onChange={handleChange}
           required
-          className="w-full bg-gray-800 border border-white text-white p-2 rounded"
+          className="w-full bg-black border border-white text-white p-2 rounded"
         >
           <option value="">Select a service</option>
           <option value="Palisade Fencing">Palisade Fencing</option>
