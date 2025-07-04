@@ -94,7 +94,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/#contact"
+              href="/contact"
               className="block px-4 py-2 hover:text-blue-400 transition-all duration-300 ease-in-out transform hover:scale-110"
               onClick={() => setIsOpen(false)}
             >
