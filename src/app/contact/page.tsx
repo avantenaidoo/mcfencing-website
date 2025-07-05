@@ -6,11 +6,9 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-black text-white px-6 py-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Get a Quote</h2>
-
-          <div className="grid md:grid-cols-2 gap-12">
+      <section className="min-h-screen bg-black text-white px-6 pt-24">
+        <div className="max-w-6xl mx-auto flex items-center justify-center min-h-[calc(100vh-96px)]">
+          <div className="grid md:grid-cols-2 gap-12 w-full">
             {/* Form */}
             <div>
               <ContactForm />
