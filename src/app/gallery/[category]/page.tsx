@@ -16,12 +16,15 @@ export default function CategoryGalleryPage({ params }: Props) {
       // add more image paths as needed
     ],
     'razor-wire': [
-      '/images/razor-wire/1.jpg',
-      '/images/razor-wire/2.jpg',
+      '/images/razor-wire/52.jpg',
+      '/images/razor-wire/53.jpg',
       // add more image paths
     ],
     'clear-vue-fencing': [
-      '/images/clear-vue-fencing/1.jpg',
+      '/images/clear-vue-fencing/28.jpg',
+      '/images/clear-vue-fencing/29.jpg',
+      '/images/clear-vue-fencing/30.jpg',
+      '/images/clear-vue-fencing/31.jpg',
       // ...
     ],
     'palisade-fencing': [
@@ -36,7 +39,11 @@ export default function CategoryGalleryPage({ params }: Props) {
       // ...
     ],
     'steel-and-wooden-fencing': [
-      '/images/steel-and-wooden-fencing/1.jpg',
+      '/images/steel-and-wooden-fencing/2.jpg',
+      '/images/steel-and-wooden-fencing/3.jpg',
+      '/images/steel-and-wooden-fencing/5.jpg',
+      '/images/steel-and-wooden-fencing/7.jpg',
+      '/images/steel-and-wooden-fencing/9.jpg',
       // ...
     ],
   };
