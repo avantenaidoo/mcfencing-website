@@ -55,7 +55,7 @@ export default function ServicesPage() {
               >
                 Gallery
               </a>{" "}
-              page for more evidence of our completed projects and services.
+              page to view some of our completed projects and services.
             </p>
           </div>
         </section>
