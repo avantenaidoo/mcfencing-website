@@ -29,22 +29,22 @@ export default function ServicesPage() {
               MC Fencing has experience with the following types of fence and gate installations:
             </p>
             <ul className="text-left space-y-3 text-lg mb-8">
-              <li>🛠️ Clear-Vue Fencing</li>
-              <li>🛠️ Electric Fencing</li>
-              <li>🛠️ Palisade Fencing</li>
-              <li>🛠️ Plastic Coated Fencing</li>
-              <li>🛠️ Razor Wire</li>
-              <li>🛠️ Steel and Wooden Fencing</li>
+              <li>- Clear-Vue Fencing</li>
+              <li>- Electric Fencing</li>
+              <li>- Palisade Fencing</li>
+              <li>- Plastic Coated Fencing</li>
+              <li>- Razor Wire</li>
+              <li>- Steel and Wooden Fencing</li>
             </ul>
 
             {/* ✅ Additional Services */}
             <h2 className="text-2xl font-semibold mb-4">Additional Services Offered:</h2>
             <ul className="text-left space-y-3 text-lg mb-8">
-              <li>- Burglar bars</li>
-              <li>- Security door gates</li>
-              <li>- Sliding gates</li>
-              <li>- Small steel work</li>
-              <li>- General handyman repairs</li>
+              <li>- Burglar Bars</li>
+              <li>- Security Door Gates</li>
+              <li>- Sliding Gates</li>
+              <li>- Small Steel Work</li>
+              <li>- General Handyman Repairs</li>
             </ul>
 
             <p className="text-lg">
