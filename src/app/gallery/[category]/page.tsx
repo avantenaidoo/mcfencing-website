@@ -1,53 +1,48 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
+import GalleryModal from '@/components/GalleryModal'; // client component for modal + gallery
 
 interface Props {
   params: { category: string };
 }
 
+const imagesByCategory: Record<string, string[]> = {
+  'electric-fencing': [
+    '/images/electric-fencing/1.jpg',
+    '/images/electric-fencing/2.jpg',
+    // ...
+  ],
+  'razor-wire': [
+    '/images/razor-wire/52.jpg',
+    '/images/razor-wire/53.jpg',
+    // ...
+  ],
+  'clear-vue-fencing': [
+    '/images/clear-vue-fencing/28.jpg',
+    '/images/clear-vue-fencing/29.jpg',
+    '/images/clear-vue-fencing/30.jpg',
+    '/images/clear-vue-fencing/31.jpg',
+  ],
+  'palisade-fencing': [
+    '/images/palisade-fencing/42.jpg',
+    '/images/palisade-fencing/49.jpg',
+    '/images/palisade-fencing/50.jpg',
+    '/images/palisade-fencing/39.jpg',
+  ],
+  'plastic-coated-fencing': [
+    '/images/plastic-coated-fencing/1.jpg',
+  ],
+  'steel-and-wooden-fencing': [
+    '/images/steel-and-wooden-fencing/2.jpg',
+    '/images/steel-and-wooden-fencing/3.jpg',
+    '/images/steel-and-wooden-fencing/5.jpg',
+    '/images/steel-and-wooden-fencing/7.jpg',
+    '/images/steel-and-wooden-fencing/9.jpg',
+  ],
+};
+
 export default function CategoryGalleryPage({ params }: Props) {
   const { category } = params;
-
-  const imagesByCategory: Record<string, string[]> = {
-    'electric-fencing': [
-      '/images/electric-fencing/1.jpg',
-      '/images/electric-fencing/2.jpg',
-      // add more image paths as needed
-    ],
-    'razor-wire': [
-      '/images/razor-wire/52.jpg',
-      '/images/razor-wire/53.jpg',
-      // add more image paths
-    ],
-    'clear-vue-fencing': [
-      '/images/clear-vue-fencing/28.jpg',
-      '/images/clear-vue-fencing/29.jpg',
-      '/images/clear-vue-fencing/30.jpg',
-      '/images/clear-vue-fencing/31.jpg',
-      // ...
-    ],
-    'palisade-fencing': [
-      '/images/palisade-fencing/42.jpg',
-      '/images/palisade-fencing/49.jpg',
-      '/images/palisade-fencing/50.jpg',
-      '/images/palisade-fencing/39.jpg',
-      // add all your actual palisade-fencing images here
-    ],
-    'plastic-coated-fencing': [
-      '/images/plastic-coated-fencing/1.jpg',
-      // ...
-    ],
-    'steel-and-wooden-fencing': [
-      '/images/steel-and-wooden-fencing/2.jpg',
-      '/images/steel-and-wooden-fencing/3.jpg',
-      '/images/steel-and-wooden-fencing/5.jpg',
-      '/images/steel-and-wooden-fencing/7.jpg',
-      '/images/steel-and-wooden-fencing/9.jpg',
-      // ...
-    ],
-  };
-
   const images = imagesByCategory[category];
 
   if (!images) return notFound();
@@ -66,20 +61,8 @@ export default function CategoryGalleryPage({ params }: Props) {
         </Link>.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map((src, index) => (
-          <div key={index} className="relative w-full aspect-[4/3]">
-            <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              fill
-              className="object-cover rounded shadow"
-              sizes="(max-width: 768px) 100vw, 33vw"
-              priority={index === 0} // improve LCP for first image
-            />
-          </div>
-        ))}
-      </div>
+      {/* Gallery modal grid */}
+      <GalleryModal images={images} />
     </main>
   );
 }
