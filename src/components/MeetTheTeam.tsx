@@ -75,10 +75,10 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
 
   const groupedMembers: TeamMemberProps[] = [
     {
-      name: "SAMPSON",
+      name: "SAMSON",
       title: "Permanent member of the MC Fencing Team",
       bio: `Samson true to his name, is a very strong and very respectful man. His shoes shine every day when he arrives at work and this trait shows in the work he delivers each day!`,
-      photoPlaceholderText: "Sampson Photo",
+      photoPlaceholderText: "Samson Photo",
     },
     {
       name: "SHANE",
