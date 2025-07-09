@@ -3,12 +3,6 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import GalleryModal from '@/components/GalleryModal';
 
-type Props = {
-  params: {
-    category: string;
-  };
-};
-
 const imagesByCategory: Record<string, { full: string; thumb: string }[]> = {
   'electric-fencing': [
     {
@@ -96,8 +90,13 @@ const imagesByCategory: Record<string, { full: string; thumb: string }[]> = {
   ],
 };
 
-export default function CategoryGalleryPage({ params }: Props) {
-  const { category } = params;
+// Mark page as async and await params destructure:
+export default async function CategoryGalleryPage({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category } = await params;
   const images = imagesByCategory[category];
 
   if (!images) return notFound();
@@ -121,7 +120,8 @@ export default function CategoryGalleryPage({ params }: Props) {
             className="text-blue-400 underline hover:text-blue-200"
           >
             gallery
-          </Link>.
+          </Link>
+          .
         </p>
       </main>
     </>
