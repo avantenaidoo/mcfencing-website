@@ -82,19 +82,19 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
     },
     {
       name: "SHANE",
-      title: "Permanent member of the MC Fencing",
+      title: "Permanent member of the MC Fencing Team",
       bio: `Shane is the quiet one, he never complains, he is a wonderful worker and a man that takes pride in himself and his work.`,
       photoPlaceholderText: "Shane Photo",
     },
     {
       name: "JOHANNES",
-      title: "Permanent member of the MC Fencing",
+      title: "Permanent member of the MC Fencing Team",
       bio: `Johannes is the more talkative member of the team. He enjoys working on his own to get the job done, takes initiative and a great team member.`,
       photoPlaceholderText: "Johannes Photo",
     },
     {
       name: "THATO",
-      title: "Permanent member of the MC Fencing",
+      title: "Permanent member of the MC Fencing Team",
       bio: `Thato isn’t a big man, but he has a big spirit and always willing to help. Thato is an asset to the team.`,
       photoPlaceholderText: "Thato Photo",
     },
