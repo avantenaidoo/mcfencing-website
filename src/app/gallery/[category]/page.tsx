@@ -1,10 +1,13 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import GalleryModal from '@/components/GalleryModal';
+import Navbar from '@/components/Navbar'; // ✅ Import the Navbar component
 
-interface Props {
-  params: { category: string };
-}
+type Props = {
+  params: {
+    category: string;
+  };
+};
 
 const imagesByCategory: Record<string, string[]> = {
   'electric-fencing': [
@@ -46,27 +49,33 @@ export default function CategoryGalleryPage({ params }: Props) {
   if (!images) return notFound();
 
   return (
-    <main className="p-6">
-      {/* ✅ Vertically centered heading using flex */}
-      <div className="flex justify-center items-center h-20 mb-4">
-        <h1 className="text-2xl font-bold capitalize text-center">
-          {category.replace(/-/g, ' ')}
-        </h1>
-      </div>
+    <>
+      <Navbar /> {/* ✅ Add Navbar to the top of the page */}
+      <main className="p-6 pt-24 bg-black text-white min-h-screen">
+        <div className="flex justify-center items-center h-20 mb-4">
+          <h1 className="text-2xl font-bold capitalize text-center">
+            {category.replace(/-/g, ' ')}
+          </h1>
+        </div>
 
-      {/* ✅ Gallery modal grid */}
-      <GalleryModal images={images} />
+        <GalleryModal images={images} />
 
-      {/* ✅ Return link below images */}
-      <p className="mt-6 text-sm text-gray-500 text-center">
-        Click here to return to the{' '}
-        <Link
-          href="/gallery"
-          className="text-blue-500 underline hover:text-blue-700"
-        >
-          gallery
-        </Link>.
-      </p>
-    </main>
+        <p className="mt-6 text-sm text-gray-400 text-center">
+          Click here to return to the{' '}
+          <Link
+            href="/gallery"
+            className="text-blue-400 underline hover:text-blue-200"
+          >
+            gallery
+          </Link>.
+        </p>
+      </main>
+    </>
   );
+}
+
+export async function generateStaticParams() {
+  return Object.keys(imagesByCategory).map((category) => ({
+    category,
+  }));
 }
