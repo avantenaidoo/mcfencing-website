@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 
 export default function ServicesPage() {
   return (
@@ -49,12 +50,12 @@ export default function ServicesPage() {
 
             <p className="text-lg">
               Visit our{" "}
-              <a
+              <Link
                 href="/gallery"
                 className="text-blue-400 underline hover:text-blue-300"
               >
                 Gallery
-              </a>{" "}
+              </Link>{" "}
               page to view some of our completed projects and services.
             </p>
           </div>
