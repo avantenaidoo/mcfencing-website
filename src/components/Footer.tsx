@@ -14,7 +14,7 @@ export default function Footer() {
           Barry-Dean IT Solutions
         </a>
       </div>
-      <div className="italic">V1.0.1</div>
+      <div className="italic">V1.0.3</div>
     </footer>
   );
 }
