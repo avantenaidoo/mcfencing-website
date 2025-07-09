@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import WhatsAppButton from "@/components/WhatsAppButton"; // import the component
+import WhatsAppButton from "@/components/WhatsAppButton";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "MC Fencing",
@@ -17,9 +18,10 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="MC Fencing" />
       </head>
-      <body className="antialiased">
-        {children}
-        <WhatsAppButton /> {/* WhatsApp button on all pages */}
+      <body className="antialiased flex flex-col min-h-screen">
+        <main className="flex-grow">{children}</main>
+        <WhatsAppButton />
+        <Footer />
       </body>
     </html>
   );
