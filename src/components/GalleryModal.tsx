@@ -21,9 +21,7 @@ export default function GalleryModal({ images }: GalleryModalProps) {
     setIsOpen(true);
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+  const closeModal = () => setIsOpen(false);
 
   const nextImage = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -48,27 +46,27 @@ export default function GalleryModal({ images }: GalleryModalProps) {
 
   return (
     <>
-      {/* ✅ Thumbnail Grid */}
+      {/* ✅ Square Thumbnail Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {images.map((img, index) => (
           <div
             key={index}
-            className="cursor-pointer"
+            className="relative w-full aspect-square cursor-pointer overflow-hidden rounded shadow"
             onClick={() => openModal(index)}
           >
             <Image
               src={img.thumb}
               alt={`Thumbnail ${index + 1}`}
-              width={300}
-              height={200}
-              className="rounded shadow object-cover w-full h-auto"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 25vw"
               priority={index === 0}
             />
           </div>
         ))}
       </div>
 
-      {/* ✅ Modal */}
+      {/* ✅ Full-size Modal */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
@@ -77,7 +75,6 @@ export default function GalleryModal({ images }: GalleryModalProps) {
           aria-modal="true"
           aria-labelledby="modal-title"
         >
-          {/* Close Button */}
           <button
             className="absolute top-6 right-6 text-white text-3xl font-bold z-50"
             onClick={(e) => {
@@ -89,7 +86,6 @@ export default function GalleryModal({ images }: GalleryModalProps) {
             &times;
           </button>
 
-          {/* Previous Arrow */}
           <button
             className="absolute left-6 top-1/2 -translate-y-1/2 text-white text-4xl font-bold select-none z-50"
             onClick={(e) => {
@@ -101,7 +97,6 @@ export default function GalleryModal({ images }: GalleryModalProps) {
             ‹
           </button>
 
-          {/* Full-size Image */}
           <div
             className="relative w-full max-w-4xl max-h-[80vh] mx-4"
             onClick={(e) => e.stopPropagation()}
@@ -117,7 +112,6 @@ export default function GalleryModal({ images }: GalleryModalProps) {
             />
           </div>
 
-          {/* Next Arrow */}
           <button
             className="absolute right-6 top-1/2 -translate-y-1/2 text-white text-4xl font-bold select-none z-50"
             onClick={(e) => {
