@@ -3,8 +3,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
+interface ImageEntry {
+  full: string;
+  thumb: string;
+}
+
 interface GalleryModalProps {
-  images: string[];
+  images: ImageEntry[];
 }
 
 export default function GalleryModal({ images }: GalleryModalProps) {
@@ -43,27 +48,27 @@ export default function GalleryModal({ images }: GalleryModalProps) {
 
   return (
     <>
-      {/* Gallery grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map((src, index) => (
+      {/* ✅ Thumbnail Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {images.map((img, index) => (
           <div
             key={index}
-            className="relative w-full aspect-[4/3] cursor-pointer"
+            className="cursor-pointer"
             onClick={() => openModal(index)}
           >
             <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              fill
-              className="object-cover rounded shadow"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              src={img.thumb}
+              alt={`Thumbnail ${index + 1}`}
+              width={300}
+              height={200}
+              className="rounded shadow object-cover w-full h-auto"
               priority={index === 0}
             />
           </div>
         ))}
       </div>
 
-      {/* Modal */}
+      {/* ✅ Modal */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
@@ -96,14 +101,14 @@ export default function GalleryModal({ images }: GalleryModalProps) {
             ‹
           </button>
 
-          {/* Image Container */}
+          {/* Full-size Image */}
           <div
             className="relative w-full max-w-4xl max-h-[80vh] mx-4"
             onClick={(e) => e.stopPropagation()}
-            style={{ zIndex: 40 }} // keep image under arrows
+            style={{ zIndex: 40 }}
           >
             <Image
-              src={images[currentIndex]}
+              src={images[currentIndex].full}
               alt={`Image ${currentIndex + 1}`}
               width={1200}
               height={900}

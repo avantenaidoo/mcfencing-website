@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 import GalleryModal from '@/components/GalleryModal';
-import Navbar from '@/components/Navbar'; // ✅ Import the Navbar component
 
 type Props = {
   params: {
@@ -9,36 +9,90 @@ type Props = {
   };
 };
 
-const imagesByCategory: Record<string, string[]> = {
+const imagesByCategory: Record<string, { full: string; thumb: string }[]> = {
   'electric-fencing': [
-    '/images/electric-fencing/1.jpg',
-    '/images/electric-fencing/2.jpg',
+    {
+      full: '/images/electric-fencing/1.jpg',
+      thumb: '/images/electric-fencing/thumbnails/1-thumb.jpg',
+    },
+    {
+      full: '/images/electric-fencing/2.jpg',
+      thumb: '/images/electric-fencing/thumbnails/2-thumb.jpg',
+    },
   ],
   'razor-wire': [
-    '/images/razor-wire/52.jpg',
-    '/images/razor-wire/53.jpg',
+    {
+      full: '/images/razor-wire/52.jpg',
+      thumb: '/images/razor-wire/thumbnails/52-thumb.jpg',
+    },
+    {
+      full: '/images/razor-wire/53.jpg',
+      thumb: '/images/razor-wire/thumbnails/53-thumb.jpg',
+    },
   ],
   'clear-vue-fencing': [
-    '/images/clear-vue-fencing/28.jpg',
-    '/images/clear-vue-fencing/29.jpg',
-    '/images/clear-vue-fencing/30.jpg',
-    '/images/clear-vue-fencing/31.jpg',
+    {
+      full: '/images/clear-vue-fencing/28.jpg',
+      thumb: '/images/clear-vue-fencing/thumbnails/28-thumb.jpg',
+    },
+    {
+      full: '/images/clear-vue-fencing/29.jpg',
+      thumb: '/images/clear-vue-fencing/thumbnails/29-thumb.jpg',
+    },
+    {
+      full: '/images/clear-vue-fencing/30.jpg',
+      thumb: '/images/clear-vue-fencing/thumbnails/30-thumb.jpg',
+    },
+    {
+      full: '/images/clear-vue-fencing/31.jpg',
+      thumb: '/images/clear-vue-fencing/thumbnails/31-thumb.jpg',
+    },
   ],
   'palisade-fencing': [
-    '/images/palisade-fencing/42.jpg',
-    '/images/palisade-fencing/49.jpg',
-    '/images/palisade-fencing/50.jpg',
-    '/images/palisade-fencing/39.jpg',
+    {
+      full: '/images/palisade-fencing/42.jpg',
+      thumb: '/images/palisade-fencing/thumbnails/42-thumb.jpg',
+    },
+    {
+      full: '/images/palisade-fencing/49.jpg',
+      thumb: '/images/palisade-fencing/thumbnails/49-thumb.jpg',
+    },
+    {
+      full: '/images/palisade-fencing/50.jpg',
+      thumb: '/images/palisade-fencing/thumbnails/50-thumb.jpg',
+    },
+    {
+      full: '/images/palisade-fencing/39.jpg',
+      thumb: '/images/palisade-fencing/thumbnails/39-thumb.jpg',
+    },
   ],
   'plastic-coated-fencing': [
-    '/images/plastic-coated-fencing/1.jpg',
+    {
+      full: '/images/plastic-coated-fencing/1.jpg',
+      thumb: '/images/plastic-coated-fencing/thumbnails/1-thumb.jpg',
+    },
   ],
   'steel-and-wooden-fencing': [
-    '/images/steel-and-wooden-fencing/2.jpg',
-    '/images/steel-and-wooden-fencing/3.jpg',
-    '/images/steel-and-wooden-fencing/5.jpg',
-    '/images/steel-and-wooden-fencing/7.jpg',
-    '/images/steel-and-wooden-fencing/9.jpg',
+    {
+      full: '/images/steel-and-wooden-fencing/2.jpg',
+      thumb: '/images/steel-and-wooden-fencing/thumbnails/2-thumb.jpg',
+    },
+    {
+      full: '/images/steel-and-wooden-fencing/3.jpg',
+      thumb: '/images/steel-and-wooden-fencing/thumbnails/3-thumb.jpg',
+    },
+    {
+      full: '/images/steel-and-wooden-fencing/5.jpg',
+      thumb: '/images/steel-and-wooden-fencing/thumbnails/5-thumb.jpg',
+    },
+    {
+      full: '/images/steel-and-wooden-fencing/7.jpg',
+      thumb: '/images/steel-and-wooden-fencing/thumbnails/7-thumb.jpg',
+    },
+    {
+      full: '/images/steel-and-wooden-fencing/9.jpg',
+      thumb: '/images/steel-and-wooden-fencing/thumbnails/9-thumb.jpg',
+    },
   ],
 };
 
@@ -50,7 +104,7 @@ export default function CategoryGalleryPage({ params }: Props) {
 
   return (
     <>
-      <Navbar /> {/* ✅ Add Navbar to the top of the page */}
+      <Navbar />
       <main className="p-6 pt-24 bg-black text-white min-h-screen">
         <div className="flex justify-center items-center h-20 mb-4">
           <h1 className="text-2xl font-bold capitalize text-center">
