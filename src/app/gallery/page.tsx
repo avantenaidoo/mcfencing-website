@@ -15,7 +15,7 @@ export default function GalleryHomePage() {
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-black text-white px-6 pt-24">
+      <section className="min-h-screen px-6 pt-24">
         <div className="max-w-4xl mx-auto py-12">
           <h1 className="text-3xl font-bold mb-6 text-center">Gallery Categories</h1>
           <ul className="space-y-6">
@@ -23,7 +23,7 @@ export default function GalleryHomePage() {
               <li key={slug}>
                 <Link
                   href={`/gallery/${slug}`}
-                  className="block text-blue-400 hover:text-blue-200 text-xl transition-all duration-200"
+                  className="block text-xl underline transition-all duration-200 hover:opacity-80"
                 >
                   {label}
                 </Link>

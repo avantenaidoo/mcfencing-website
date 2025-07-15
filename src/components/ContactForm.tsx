@@ -38,7 +38,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full bg-transparent border border-white text-white p-2 rounded"
+            className="w-full bg-transparent border p-2 rounded"
           />
         </div>
 
@@ -50,7 +50,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full bg-transparent border border-white text-white p-2 rounded"
+            className="w-full bg-transparent border p-2 rounded"
           />
         </div>
 
@@ -61,7 +61,7 @@ export default function ContactForm() {
             value={formData.projectType}
             onChange={handleChange}
             required
-            className="w-full bg-black border border-white text-white p-2 rounded"
+            className="w-full border p-2 rounded"
           >
             <option value="">Select a service</option>
             <option value="Palisade Fencing">Palisade Fencing</option>
@@ -80,13 +80,13 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             rows={5}
-            className="w-full bg-transparent border border-white text-white p-2 rounded"
+            className="w-full bg-transparent border p-2 rounded"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-white text-black px-6 py-2 rounded font-semibold hover:bg-gray-300 transition"
+          className="px-6 py-2 rounded font-semibold transition"
         >
           Submit
         </button>

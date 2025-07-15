@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutSection() {
   return (
-    <section className="snap-start min-h-screen flex flex-col justify-center items-center bg-black text-white p-8 max-w-5xl mx-auto">
+    <section className="snap-start min-h-screen flex flex-col justify-center items-center p-8 max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold mb-6">About MC Fencing</h1>
       <p className="text-lg leading-relaxed max-w-3xl text-center">
         We are a family owned & operated business.

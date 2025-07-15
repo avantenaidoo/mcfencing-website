@@ -9,7 +9,7 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main
-        className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth bg-black pt-24"
+        className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth pt-24"
         style={{ scrollSnapType: "y mandatory" }}
       >
         <section className="snap-start min-h-screen">

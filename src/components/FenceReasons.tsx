@@ -38,7 +38,10 @@ export default function FenceReasons() {
   ];
 
   return (
-    <section className="p-6 bg-black text-white mx-auto max-w-5xl">
+    <section
+      className="p-6 mx-auto max-w-5xl"
+      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+    >
       <h2 className="text-3xl font-bold mb-4">Safety, security, style....</h2>
       <p className="mb-6 text-left text-lg max-w-3xl mx-auto">
         There are many reasons for installing a fence. Knowing your specific
@@ -52,7 +55,7 @@ export default function FenceReasons() {
         {reasons.map(({ title, description }) => (
           <div key={title} className="space-y-2">
             <h4 className="font-bold text-lg">{title}</h4>
-            <p className="text-gray-300 leading-relaxed">{description}</p>
+            <p className="leading-relaxed">{description}</p>
           </div>
         ))}
       </div>

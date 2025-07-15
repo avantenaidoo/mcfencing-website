@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CommitmentSection() {
   return (
-    <section className="snap-start min-h-screen flex flex-col justify-center items-center bg-gray-900 text-white p-8 max-w-5xl mx-auto">
+    <section className="snap-start min-h-screen flex flex-col justify-center items-center p-8 max-w-5xl mx-auto">
       <h2 className="text-3xl font-semibold mb-6">Commitment</h2>
       <p className="text-lg leading-relaxed max-w-3xl text-center">
         We pride ourselves on our commitment to customer service and the quality of every

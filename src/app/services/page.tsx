@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <>
       <Navbar />
       <main
-        className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth bg-black pt-24"
+        className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth pt-24"
         style={{
           scrollSnapType: "y mandatory",
           scrollbarWidth: "none",
@@ -22,7 +22,7 @@ export default function ServicesPage() {
 
         {/* Services Intro Section */}
         <section className="snap-start min-h-screen flex flex-col items-center justify-center px-6">
-          <div className="max-w-3xl w-full text-white">
+          <div className="max-w-3xl w-full">
             <h1 className="text-4xl font-bold mb-8">
               Fence and Gate Contractor Services
             </h1>
@@ -52,7 +52,8 @@ export default function ServicesPage() {
               Visit our{" "}
               <Link
                 href="/gallery"
-                className="text-blue-400 underline hover:text-blue-300"
+                className="underline hover:text-blue-300"
+                style={{ color: "inherit" }}
               >
                 Gallery
               </Link>{" "}

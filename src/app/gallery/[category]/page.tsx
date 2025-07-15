@@ -90,7 +90,6 @@ const imagesByCategory: Record<string, { full: string; thumb: string }[]> = {
   ],
 };
 
-// Mark page as async and await params destructure:
 export default async function CategoryGalleryPage({
   params,
 }: {
@@ -104,7 +103,7 @@ export default async function CategoryGalleryPage({
   return (
     <>
       <Navbar />
-      <main className="p-6 pt-24 bg-black text-white min-h-screen">
+      <main className="p-6 pt-24 min-h-screen">
         <div className="flex justify-center items-center h-20 mb-4">
           <h1 className="text-2xl font-bold capitalize text-center">
             {category.replace(/-/g, ' ')}
@@ -113,12 +112,9 @@ export default async function CategoryGalleryPage({
 
         <GalleryModal images={images} />
 
-        <p className="mt-6 text-sm text-gray-400 text-center">
+        <p className="mt-6 text-sm text-center">
           Click here to return to the{' '}
-          <Link
-            href="/gallery"
-            className="text-blue-400 underline hover:text-blue-200"
-          >
+          <Link href="/gallery" className="underline hover:opacity-80">
             gallery
           </Link>
           .

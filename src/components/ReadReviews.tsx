@@ -2,12 +2,12 @@ import React from "react";
 
 export default function ReadReviews() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12 text-white bg-black">
+    <section className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8 text-center">Customer Reviews</h1>
 
       <div className="space-y-12">
         {/* Review 1 */}
-        <div className="bg-gray-900 p-6 rounded shadow-md">
+        <div className="p-6 rounded shadow-md">
           <p className="text-lg leading-relaxed mb-4">
             So glad my son recommended MC Fencing after the second house burglary in two
             weeks. First impression, the punctuality of the meeting to discuss the project was
@@ -20,7 +20,7 @@ export default function ReadReviews() {
         </div>
 
         {/* Review 2 */}
-        <div className="bg-gray-900 p-6 rounded shadow-md">
+        <div className="p-6 rounded shadow-md">
           <p className="text-lg leading-relaxed mb-4">
             We want to thank you for your exemplary and professional service. The two clear-
             vue fences you have erected on our property are of the high quality and standard
