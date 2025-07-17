@@ -27,41 +27,79 @@ export default function ContactForm() {
 
   return (
     <>
-      <h2 className="text-4xl font-bold mb-8 text-center">Get a Quote</h2>
+      <h2
+        className="text-4xl font-bold mb-8 text-center"
+        style={{ color: "var(--foreground)" }}
+      >
+        Get a Quote
+      </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block mb-1">Name:</label>
+          <label
+            htmlFor="name"
+            className="block mb-1 font-medium"
+            style={{ color: "var(--foreground)" }}
+          >
+            Name:
+          </label>
           <input
             type="text"
             name="name"
+            id="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full bg-transparent border p-2 rounded"
+            className="w-full p-2 rounded bg-white border"
+            style={{
+              borderColor: "#E3E8F0",
+              color: "var(--foreground)",
+            }}
           />
         </div>
 
         <div>
-          <label className="block mb-1">Email:</label>
+          <label
+            htmlFor="email"
+            className="block mb-1 font-medium"
+            style={{ color: "var(--foreground)" }}
+          >
+            Email:
+          </label>
           <input
             type="email"
             name="email"
+            id="email"
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full bg-transparent border p-2 rounded"
+            className="w-full p-2 rounded bg-white border"
+            style={{
+              borderColor: "#E3E8F0",
+              color: "var(--foreground)",
+            }}
           />
         </div>
 
         <div>
-          <label className="block mb-1">Project Type:</label>
+          <label
+            htmlFor="projectType"
+            className="block mb-1 font-medium"
+            style={{ color: "var(--foreground)" }}
+          >
+            Project Type:
+          </label>
           <select
             name="projectType"
+            id="projectType"
             value={formData.projectType}
             onChange={handleChange}
             required
-            className="w-full border p-2 rounded"
+            className="w-full p-2 rounded bg-white border"
+            style={{
+              borderColor: "#E3E8F0",
+              color: "var(--foreground)",
+            }}
           >
             <option value="">Select a service</option>
             <option value="Palisade Fencing">Palisade Fencing</option>
@@ -73,20 +111,35 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label className="block mb-1">About Project:</label>
+          <label
+            htmlFor="about"
+            className="block mb-1 font-medium"
+            style={{ color: "var(--foreground)" }}
+          >
+            About Project:
+          </label>
           <textarea
             name="about"
+            id="about"
             value={formData.about}
             onChange={handleChange}
             required
             rows={5}
-            className="w-full bg-transparent border p-2 rounded"
+            className="w-full p-2 rounded bg-white border"
+            style={{
+              borderColor: "#E3E8F0",
+              color: "var(--foreground)",
+            }}
           />
         </div>
 
         <button
           type="submit"
-          className="px-6 py-2 rounded font-semibold transition"
+          className="px-6 py-2 rounded font-semibold transition-colors"
+          style={{
+            backgroundColor: "var(--primary)",
+            color: "#ffffff",
+          }}
         >
           Submit
         </button>

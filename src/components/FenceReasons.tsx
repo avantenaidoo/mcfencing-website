@@ -39,30 +39,62 @@ export default function FenceReasons() {
 
   return (
     <section
-      className="p-6 mx-auto max-w-5xl"
-      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+      className="py-12"
+      style={{ backgroundColor: "var(--background)" }}
     >
-      <h2 className="text-3xl font-bold mb-4">Safety, security, style....</h2>
-      <p className="mb-6 text-left text-lg max-w-3xl mx-auto">
-        There are many reasons for installing a fence. Knowing your specific
-        end-goal will help you to better plan and execute your project.
-      </p>
-      <h3 className="text-2xl font-semibold mb-6">
-        Top reasons why people choose to install a fence:
-      </h3>
+      <div
+        className="max-w-6xl mx-auto px-6"
+        style={{ color: "var(--foreground)" }}
+      >
+        <h2
+          className="text-4xl font-extrabold mb-6 tracking-tight"
+          style={{ color: "var(--foreground)" }}
+        >
+          Safety, security, style....
+        </h2>
+        <p
+          className="text-lg max-w-3xl mb-10 mx-auto leading-relaxed"
+          style={{ color: "var(--text-muted)" }}
+        >
+          There are many reasons for installing a fence. Knowing your specific end-goal will help you to better plan and execute your project.
+        </p>
+        <h3
+          className="text-2xl font-semibold mb-10"
+          style={{ color: "var(--primary)" }}
+        >
+          Top reasons why people choose to install a fence:
+        </h3>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        {reasons.map(({ title, description }) => (
-          <div key={title} className="space-y-2">
-            <h4 className="font-bold text-lg">{title}</h4>
-            <p className="leading-relaxed">{description}</p>
-          </div>
-        ))}
+        <div className="grid gap-10 md:grid-cols-2">
+          {reasons.map(({ title, description }) => (
+            <article
+              key={title}
+              className="rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+              style={{ backgroundColor: "var(--background)" }}
+            >
+              <h4
+                className="text-xl font-bold mb-3"
+                style={{ color: "var(--primary)" }}
+              >
+                {title}
+              </h4>
+              <p
+                className="leading-relaxed"
+                style={{ color: "var(--text-muted)" }}
+              >
+                {description}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <p
+          className="mt-12 text-center text-lg font-semibold"
+          style={{ color: "var(--foreground)" }}
+        >
+          We invite you to call MC Fencing today for all your fencing needs!
+        </p>
       </div>
-
-      <p className="mt-8 font-semibold text-lg">
-        We invite you to call MC Fencing today for all your fencing needs!
-      </p>
     </section>
   );
 }

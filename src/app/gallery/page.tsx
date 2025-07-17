@@ -15,15 +15,17 @@ export default function GalleryHomePage() {
   return (
     <>
       <Navbar />
-      <section className="min-h-screen px-6 pt-24">
-        <div className="max-w-4xl mx-auto py-12">
-          <h1 className="text-3xl font-bold mb-6 text-center">Gallery Categories</h1>
-          <ul className="space-y-6">
+      <section className="min-h-screen px-6 pt-32 pb-20 bg-[var(--background)] text-[var(--foreground)]">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-extrabold mb-10 text-center text-[var(--primary)]">
+            Gallery Categories
+          </h1>
+          <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
             {categories.map(({ slug, label }) => (
               <li key={slug}>
                 <Link
                   href={`/gallery/${slug}`}
-                  className="block text-xl underline transition-all duration-200 hover:opacity-80"
+                  className="block w-full text-lg font-semibold text-center bg-[var(--primary)] text-white py-4 rounded-md shadow hover:bg-[var(--secondary)] transition-colors duration-300"
                 >
                   {label}
                 </Link>

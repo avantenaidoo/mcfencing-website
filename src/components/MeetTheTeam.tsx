@@ -13,15 +13,28 @@ function TeamMember({ name, title, bio, photoPlaceholderText }: TeamMemberProps)
   return (
     <div className="flex flex-col md:flex-row items-center gap-10 mb-16 max-w-5xl mx-auto px-6">
       {/* Photo container */}
-      <div className="w-48 h-48 md:w-64 md:h-64 rounded-lg flex items-center justify-center text-lg font-semibold flex-shrink-0 border">
+      <div
+        className="w-48 h-48 md:w-64 md:h-64 rounded-lg flex items-center justify-center text-lg font-semibold flex-shrink-0 border"
+        style={{
+          borderColor: "var(--text-muted)",
+          backgroundColor: "var(--background)",
+          color: "var(--text-muted)",
+        }}
+      >
         {photoPlaceholderText || "Photo Placeholder"}
       </div>
 
       {/* Text container */}
       <div className="max-w-xl">
-        <h3 className="text-3xl font-semibold mb-3">{name}</h3>
-        <p className="italic mb-5">{title}</p>
-        <p className="text-lg leading-relaxed whitespace-pre-line">{bio}</p>
+        <h3 className="text-3xl font-extrabold mb-3" style={{ color: "var(--primary)" }}>
+          {name}
+        </h3>
+        <p className="italic mb-5" style={{ color: "var(--text-muted)" }}>
+          {title}
+        </p>
+        <p className="text-lg leading-relaxed whitespace-pre-line" style={{ color: "var(--foreground)" }}>
+          {bio}
+        </p>
       </div>
     </div>
   );
@@ -30,14 +43,27 @@ function TeamMember({ name, title, bio, photoPlaceholderText }: TeamMemberProps)
 function GroupedTeamMember({ name, title, bio, photoPlaceholderText }: TeamMemberProps) {
   return (
     <div className="flex flex-col md:flex-row items-center gap-6 mb-8 max-w-4xl mx-auto px-6">
-      <div className="w-28 h-28 md:w-36 md:h-36 rounded-lg flex items-center justify-center text-sm font-semibold flex-shrink-0 border">
+      <div
+        className="w-28 h-28 md:w-36 md:h-36 rounded-lg flex items-center justify-center text-sm font-semibold flex-shrink-0 border"
+        style={{
+          borderColor: "var(--text-muted)",
+          backgroundColor: "var(--background)",
+          color: "var(--text-muted)",
+        }}
+      >
         {photoPlaceholderText || "Photo Placeholder"}
       </div>
 
       <div className="max-w-lg">
-        <h3 className="text-xl font-semibold mb-1">{name}</h3>
-        <p className="italic mb-2">{title}</p>
-        <p className="text-base leading-relaxed whitespace-pre-line">{bio}</p>
+        <h3 className="text-xl font-semibold mb-1" style={{ color: "var(--primary)" }}>
+          {name}
+        </h3>
+        <p className="italic mb-2" style={{ color: "var(--text-muted)" }}>
+          {title}
+        </p>
+        <p className="text-base leading-relaxed whitespace-pre-line" style={{ color: "var(--foreground)" }}>
+          {bio}
+        </p>
       </div>
     </div>
   );
@@ -110,7 +136,7 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
       `}</style>
 
       <section
-        className="snap-y snap-mandatory overflow-y-scroll scroll-smooth"
+        className="snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-white"
         style={{ height: "100vh", scrollSnapType: "y mandatory" }}
       >
         {/* Intro Page */}
@@ -118,8 +144,17 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
           className="snap-start flex flex-col items-center justify-center px-6 h-screen"
           style={{ maxWidth: "900px", margin: "0 auto" }}
         >
-          <h2 className="text-4xl font-bold mb-8 text-center">Meet the Team</h2>
-          <div className="w-full max-w-4xl h-64 rounded-lg flex items-center justify-center text-xl font-semibold border">
+          <h2 className="text-4xl font-extrabold mb-8 text-center" style={{ color: "var(--primary)" }}>
+            Meet the Team
+          </h2>
+          <div
+            className="w-full max-w-4xl h-64 rounded-lg flex items-center justify-center text-xl font-semibold border"
+            style={{
+              borderColor: "var(--text-muted)",
+              backgroundColor: "var(--background)",
+              color: "var(--text-muted)",
+            }}
+          >
             Team Photo Placeholder
           </div>
         </div>

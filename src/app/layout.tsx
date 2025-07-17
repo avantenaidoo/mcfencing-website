@@ -17,8 +17,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="apple-mobile-web-app-title" content="MC Fencing" />
+        <meta name="theme-color" content="#009de0" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="antialiased flex flex-col min-h-screen">
+      <body className="bg-[var(--background)] text-[var(--foreground)] font-sans antialiased flex flex-col min-h-screen">
         <main className="flex-grow">{children}</main>
         <WhatsAppButton />
         <Footer />
