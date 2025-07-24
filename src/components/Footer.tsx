@@ -24,7 +24,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="italic text-muted" style={{ color: "var(--text-muted)" }}>
-        V1.0.4
+        V1.0.5
       </div>
     </footer>
   );
