@@ -136,12 +136,12 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
       `}</style>
 
       <section
-        className="snap-y snap-mandatory overflow-y-scroll scroll-smooth bg-white"
-        style={{ height: "100vh", scrollSnapType: "y mandatory" }}
+        className="overflow-y-auto bg-white"
+        style={{ height: "100vh" }}
       >
         {/* Intro Page */}
         <div
-          className="snap-start flex flex-col items-center justify-center px-6 h-screen"
+          className="flex flex-col items-center justify-center px-6 h-screen"
           style={{ maxWidth: "900px", margin: "0 auto" }}
         >
           <h2 className="text-4xl font-extrabold mb-8 text-center" style={{ color: "var(--primary)" }}>
@@ -163,7 +163,7 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
         {individualMembers.map((member) => (
           <div
             key={member.name}
-            className="snap-start flex items-center px-6 h-screen"
+            className="flex items-center px-6"
             style={{ maxWidth: "900px", margin: "0 auto" }}
           >
             <TeamMember {...member} />
@@ -172,8 +172,8 @@ Gerrie is reliable, hardworking, and a positive influence on the team. In additi
 
         {/* Grouped Members */}
         <div
-          className="snap-start px-6 flex flex-col justify-center items-center overflow-hidden"
-          style={{ maxWidth: "900px", margin: "0 auto", height: "calc(100vh - 64px)" }}
+          className="px-6 flex flex-col justify-center items-center overflow-hidden"
+          style={{ maxWidth: "900px", margin: "0 auto" }}
         >
           {groupedMembers.map((member) => (
             <GroupedTeamMember key={member.name} {...member} />
