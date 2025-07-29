@@ -46,7 +46,7 @@ export default function GalleryModal({ images }: GalleryModalProps) {
 
   return (
     <>
-      {/* ✅ Square Thumbnail Grid */}
+      {/* Thumbnail Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {images.map((img, index) => (
           <div
@@ -54,19 +54,33 @@ export default function GalleryModal({ images }: GalleryModalProps) {
             className="relative w-full aspect-square cursor-pointer overflow-hidden rounded shadow"
             onClick={() => openModal(index)}
           >
-            <Image
-              src={img.thumb}
-              alt={`Thumbnail ${index + 1}`}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 25vw"
-              priority={index === 0}
-            />
+            {img.full.endsWith('.mp4') ? (
+              <>
+                <Image
+                  src={img.thumb}
+                  alt={`Video thumbnail ${index + 1}`}
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white text-3xl bg-black bg-opacity-60 px-3 py-1 rounded">▶</span>
+                </div>
+              </>
+            ) : (
+              <Image
+                src={img.thumb}
+                alt={`Thumbnail ${index + 1}`}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 25vw"
+                priority={index === 0}
+              />
+            )}
           </div>
         ))}
       </div>
 
-      {/* ✅ Full-size Modal */}
+      {/* Full-size Modal */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
@@ -102,14 +116,24 @@ export default function GalleryModal({ images }: GalleryModalProps) {
             onClick={(e) => e.stopPropagation()}
             style={{ zIndex: 40 }}
           >
-            <Image
-              src={images[currentIndex].full}
-              alt={`Image ${currentIndex + 1}`}
-              width={1200}
-              height={900}
-              className="object-contain rounded"
-              priority
-            />
+            {images[currentIndex].full.endsWith('.mp4') ? (
+              <video
+                src={images[currentIndex].full}
+                controls
+                autoPlay
+                className="w-full h-auto max-h-[80vh] rounded"
+                poster={images[currentIndex].thumb}
+              />
+            ) : (
+              <Image
+                src={images[currentIndex].full}
+                alt={`Image ${currentIndex + 1}`}
+                width={1200}
+                height={900}
+                className="object-contain rounded"
+                priority
+              />
+            )}
           </div>
 
           <button

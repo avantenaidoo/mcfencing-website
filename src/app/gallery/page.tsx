@@ -9,6 +9,7 @@ const categories = [
   { slug: "plastic-coated-fencing", label: "Plastic Coated Fencing" },
   { slug: "razor-wire", label: "Razor Wire" },
   { slug: "steel-and-wooden-fencing", label: "Steel and Wooden Fencing" },
+  { slug: "videos", label: "Videos" },
 ];
 
 export default function GalleryHomePage() {
